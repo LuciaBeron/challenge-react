@@ -1,12 +1,12 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-
+ 
 
 export default function Navigation() {
     return (
       <Container>
-        <Navbar expand="md" className="border">
+        <Navbar expand="md" className="border border-dark rounded">
           <Navbar.Brand>My blog</Navbar.Brand> 
           
           <Navbar.Toggle aria-controls="navbar" />

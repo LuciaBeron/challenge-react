@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from './components/Navigation';
-import { BrowserRouter as Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Post from './components/Post'
 import Edit from './components/Edit'

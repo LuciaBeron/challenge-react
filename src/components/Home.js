@@ -30,8 +30,8 @@ export default function Home() {
             </Spinner> 
         </Container>
         :
-        <div className="mt-3 w-50 mx-auto">            
-            <h3 className="text-center mt-4 mb-4">Posts</h3>
+        <div className="mt-3 width-class mx-auto">           
+            
             <NewPost />           
 
             { blogList && <BlogList blogList={blogList} />}

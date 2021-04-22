@@ -1,0 +1,21 @@
+body {
+    background: #a3bceb;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #c1d3f3, #afc5ec);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #c1d2f0, #bfd1f1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+@media (max-width: 768px) {
+    .width-class {
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .width-class{
+        max-width: 50%;
+    }
+}
+
+

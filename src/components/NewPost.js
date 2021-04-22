@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, Modal, Alert } from 'react-bootstrap';
 import Axios from 'axios';
+import { RiAddCircleLine } from 'react-icons/ri';
 
 export default function NewPost() {
 
@@ -59,9 +60,12 @@ export default function NewPost() {
   
     return (
       <>
-        <Button className="d-block mx-auto mb-4" onClick={handleShow}>
-          Add post
-        </Button>
+        <h3 className="text-center mt-4 mb-4">
+          Posts
+          <RiAddCircleLine className="ml-2" onClick={handleShow}/>
+  
+        </h3>
+
   
         <Modal show={show} onHide={handleClose}>
         <Form className="p-3">            

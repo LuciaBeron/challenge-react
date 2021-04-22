@@ -23,6 +23,7 @@ export default function Edit() {
         ...form,
             [e.target.name] : e.target.value,
         })
+        console.log(form);
     }
 
     useEffect(() => {
@@ -75,16 +76,16 @@ export default function Edit() {
 
         <div>
         { data ?
-        <Form className="p-3 border mt-4 w-50 mx-auto"> 
+        <Form className="p-3 border mt-4 border-secondary rounded mx-auto width-class"> 
             <h2>Post N° {id} - Edit</h2>      
             <Form.Group controlId="formTitle">
                 <Form.Label className="pt-3">Title</Form.Label>
-                <Form.Control onChange={updateForm} value={data.title} name="title" type="text" placeholder="Enter post title" />
+                <Form.Control onChange={updateForm} defaultValue={data.title} name="title" type="text" placeholder="Enter post title" />
             </Form.Group>
 
             <Form.Group controlId="formBody">
                 <Form.Label>Post content</Form.Label>
-                <Form.Control onChange={updateForm} value={data.body} name="body" as="textarea" rows={5} placeholder="Post content" />
+                <Form.Control onChange={updateForm} defaultValue={data.body} name="body" as="textarea" rows={5} placeholder="Post content" />
             </Form.Group>       
 
             {error.length > 0 && <Alert variant={'danger'}>{error}</Alert>}

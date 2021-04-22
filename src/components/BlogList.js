@@ -17,7 +17,7 @@ export default function BlogList({ blogList }) {
 
     return (
         
-        <table className="table">    
+        <table className="table table-striped">    
             {
                 blogList.map(item => {                    
                     const { title, id } = item;
