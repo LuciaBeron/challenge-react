@@ -21,20 +21,12 @@ export default function Home() {
     return (
         <div className="mt-3 w-50 mx-auto">
             <div>
-                <h3 className="text-center mt-4 mb-4">
-                    Posts
-                </h3>
+                <h3 className="text-center mt-4 mb-4">Posts</h3>
                 <NewPost />
             </div>
-
-            <table className="table">
-                <tbody className="table">
-                    { blogList && <BlogList blogList={blogList} />}
-                </tbody>
-            </table>
-        
-
-
+            
+            { blogList && <BlogList blogList={blogList} />}
+ 
         </div>
     )
 }

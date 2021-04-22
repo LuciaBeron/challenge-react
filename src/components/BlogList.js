@@ -7,8 +7,8 @@ import { IoEnterOutline } from 'react-icons/io5';
 
 export default function BlogList({ blogList }) {
     return (
-        <div>
-    
+        
+        <table className="table">    
             {
                 blogList.map(item => {
                     return (
@@ -26,7 +26,7 @@ export default function BlogList({ blogList }) {
               
                 })
             } 
-        </div>       
+        </table>     
      
     )
 }

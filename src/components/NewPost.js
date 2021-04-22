@@ -28,6 +28,7 @@ export default function NewPost() {
       const validate = validateForm();
    
       if (validate) {
+        handleClose();
         Axios.post('https://jsonplaceholder.typicode.com/posts',
           {
             data: {
