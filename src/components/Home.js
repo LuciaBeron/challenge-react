@@ -13,7 +13,7 @@ export default function Home() {
         Axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(res => {
             addBlog(res.data);
-            showLoad(!loading);
+            showLoad(false);
         })
         .catch(err => {
             console.log(err);
