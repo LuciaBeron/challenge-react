@@ -16,7 +16,7 @@ export default function Navigation() {
                     <Nav.Link>Home</Nav.Link>
                   </LinkContainer>
                   
-                  <LinkContainer to="/home">
+                  <LinkContainer to="/edit/1">
                     <Nav.Link>Edit Post</Nav.Link>
                   </LinkContainer>
             </Nav>            

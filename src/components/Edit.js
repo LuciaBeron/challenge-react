@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { Form, Alert, Button } from 'react-bootstrap'
+import { Form, Alert, Button, Spinner, Container } from 'react-bootstrap'
+import NotFound from './NotFound'
+
 
 export default function Edit() {
 
     const [error, setError] = useState('');
     const [alert, setAlert] = useState('');
+    const [data, setData] = useState(null);
+    const [loading, showLoad] = useState(true)
     const { id } = useParams();
+
     const [form, setForm] = useState({
         title:'',
         body: ''
@@ -19,6 +24,20 @@ export default function Edit() {
             [e.target.name] : e.target.value,
         })
     }
+
+    useEffect(() => {
+        Axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        .then(res => {
+            setData({
+                title: res.data.title,
+                body: res.data.body
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            showLoad(false);
+        })
+    })
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -52,28 +71,38 @@ export default function Edit() {
         return true;
       }
 
-
-
     return (
-            <Form className="p-3 border mt-4 w-50 mx-auto"> 
+
+        <div>
+        { data ?
+        <Form className="p-3 border mt-4 w-50 mx-auto"> 
             <h2>Post N° {id} - Edit</h2>      
             <Form.Group controlId="formTitle">
                 <Form.Label className="pt-3">Title</Form.Label>
-                <Form.Control onChange={updateForm} name="title" type="text" placeholder="Enter post title" />
+                <Form.Control onChange={updateForm} value={data.title} name="title" type="text" placeholder="Enter post title" />
             </Form.Group>
 
             <Form.Group controlId="formBody">
                 <Form.Label>Post content</Form.Label>
-                <Form.Control onChange={updateForm} name="body" as="textarea" rows={5} placeholder="Post content" />
+                <Form.Control onChange={updateForm} value={data.body} name="body" as="textarea" rows={5} placeholder="Post content" />
             </Form.Group>       
 
             {error.length > 0 && <Alert variant={'danger'}>{error}</Alert>}
             {alert.length > 0 && <Alert variant={'success'}>{alert}</Alert>}
 
-
             <Button type="submit" onClick={handleSubmit}>
                 Save Changes
             </Button>
-          </Form>
+        </Form>
+        :  loading ?
+        <Container className="d-flex align-items-center mt-5">
+        <Spinner animation="border mx-auto" role="status">
+            <span className="sr-only">Loading...</span>
+        </Spinner> 
+        </Container>        
+        : <NotFound /> 
+        }
+
+        </div>
     )
 }
