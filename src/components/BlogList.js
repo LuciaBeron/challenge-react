@@ -9,7 +9,7 @@ import Axios from 'axios';
 export default function BlogList({ blogList }) {
 
     const deletePost = id => {
-        Axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        Axios.delete(`https://jsonplaceholder.cypress.io/posts/${id}`)
         .then(res => {
             console.log(res)
         })

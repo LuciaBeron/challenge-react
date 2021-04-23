@@ -30,7 +30,7 @@ export default function NewPost() {
    
       if (validate) {
         handleClose();
-        Axios.post('https://jsonplaceholder.typicode.com/posts',
+        Axios.post('https://jsonplaceholder.cypress.io/posts',
           {
             data: {
               title: form.title,

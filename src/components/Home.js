@@ -10,7 +10,7 @@ export default function Home() {
     const [loading, showLoad] = useState(true);
 
     useEffect(() => {    
-        Axios.get('https://jsonplaceholder.typicode.com/posts')
+        Axios.get('https://jsonplaceholder.cypress.io/posts')
         .then(res => {
             addBlog(res.data);
             showLoad(false);

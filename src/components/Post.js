@@ -10,7 +10,7 @@ export default function Post() {
     const { id } = useParams();
 
     useEffect(() => {
-        Axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        Axios.get(`https://jsonplaceholder.cypress.io/posts/${id}`)
         .then(res => {
             showPost({
                 title: res.data.title,

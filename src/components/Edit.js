@@ -27,7 +27,7 @@ export default function Edit() {
     }
 
     useEffect(() => {
-        Axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        Axios.get(`https://jsonplaceholder.cypress.io/posts/${id}`)
         .then(res => {
             setData({
                 title: res.data.title,
@@ -45,7 +45,7 @@ export default function Edit() {
         const validate = validateForm();
      
         if (validate) {
-          Axios.put(`https://jsonplaceholder.typicode.com/posts/${id}`,
+          Axios.put(`https://jsonplaceholder.cypress.io/posts/${id}`,
             {
               data: {
                 title: form.title,
